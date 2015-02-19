@@ -34,7 +34,7 @@ class Database {
     }
 
     public function openconnection() {
-        $this->connection = new mysquil($this->host, $this->username, $this->password, $this->database);
+        $this->connection = new mysqli($this->host, $this->username, $this->password, $this->database);
 
         if ($this->connection->connect_error) {
             die("<p> Error:" . $this->connection->connect_error . "</p>");
@@ -48,7 +48,7 @@ class Database {
     }
 
     public function query($string) {
-        $this->openconnections();
+        $this->openconnection();
 
         $query = $this->connection->query($string);
         

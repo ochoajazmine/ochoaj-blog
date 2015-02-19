@@ -9,7 +9,7 @@ $username = "root";
 $password = "root";
 $database = "blog_db";
 
-if(!isset($_SESSION["CONNECTION"])){
-    $connection = new Databse($host, $username, $password, $database);
-    $_session["connection"] = $connection;
+if(!isset($_SESSION["connection"])){
+    $connection = new Database($host, $username, $password, $database);
+    $_SESSION["connection"] = $connection;
 }
